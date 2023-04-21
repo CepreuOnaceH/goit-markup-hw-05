@@ -81,6 +81,7 @@ body {
 .link:focus,
 .link:hover {
   color: var(--hero-btn-bcg-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-up {
@@ -101,12 +102,12 @@ body {
 .list {
   list-style-type: none;
 }
-.list:hover {
-  color: var(--hero-btn-bcg-color);
-}
+.list:hover,
 .list:focus {
   color: var(--hero-btn-bcg-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .site-nav {
   position: relative;
   padding-top: 24px;
@@ -139,14 +140,15 @@ body {
 .site-nav:focus::after,
 .site-nav:hover::after {
   background-color: #404bbf;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-nav:hover {
-  color: var(--hero-btn-bcg-color);
-}
+.site-nav:hover,
 .site-nav:focus {
   color: var(--hero-btn-bcg-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .auth-nav {
   text-decoration: none;
   color: var(--secondary-text-color);
@@ -159,9 +161,11 @@ body {
 }
 .auth-nav:hover {
   color: var(--hero-btn-bcg-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav-tel:hover {
   color: var(--secondary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Hero section */
 
@@ -216,23 +220,28 @@ body {
   border-radius: 4px;
   margin: 48px 635px 0px 480px;
 }
-.hero-btn:active {
-  background-color: var(--hero-btn-bcg-color);
-}
+.hero-btn:active,
 .hero-btn:hover {
   background-color: var(--hero-btn-bcg-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .hero-btn:focus {
   background-color: var(--hero-btn-bcg-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Modal window */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(46, 47, 66, 0.4);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 }
 .modal {
   position: absolute;
@@ -246,6 +255,11 @@ body {
   border-radius: 4px;
   padding: 24px;
 }
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .modal-btn {
   background-color: #fff;
   border: none;
@@ -253,6 +267,9 @@ body {
   margin-left: auto;
 }
 .modal-svg {
+  display: flex;
+  top: -12px;
+  left: -12px;
   border-radius: 50%;
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -355,6 +372,8 @@ body {
 .clients-link:focus {
   border-color: #404bbf;
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-container {
@@ -427,13 +446,12 @@ body {
   justify-content: center;
 }
 
-.our-team-icons-link:hover {
-  background-color: #404bbf;
-}
-
+.our-team-icons-link:hover,
 .our-team-icons-link:focus {
   background-color: #404bbf;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .our-team-icons-svg {
   fill: #f4f4fd;
 }
@@ -458,6 +476,10 @@ body {
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .doing-list {
   width: calc((100% - 48px) / 3);
@@ -483,6 +505,7 @@ body {
 .portfolio-card-item:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item {
@@ -492,6 +515,7 @@ body {
 .portfolio-item:focus {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .list-container {
   display: flex;
@@ -563,6 +587,7 @@ body {
 .portfolio-link:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card-title {
@@ -673,5 +698,5 @@ body {
 .footer-icons-link:hover,
 .footer-icons-link:focus {
   background-color: #31d0aa;
-  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

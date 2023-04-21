@@ -59,17 +59,12 @@
       <section class="hero-background hero">
         <div class="container container-hero">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-btn" type="button">Order Service</button>
-        </div>
-      </section>
-      <!-- Modal window -->
-      <!-- <div class="overlay">
-        <div class="modal">
-          <button class="modal-btn" type="button">
-            <svg class="modal-svg" width="24" height="24"></svg>
+          <button class="hero-btn" type="button" data-modal-open>
+            Order Service
           </button>
         </div>
-      </div> -->
+      </section>
+
       <!-- About us -->
       <section class="section">
         <div class="container container-about-us">
@@ -448,5 +443,20 @@
         </div>
       </div>
     </footer>
+    <!-- Modal window -->
+    <div class="overlay is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-btn" type="button" data-modal-close>
+          <svg class="modal-svg" width="24" height="24">
+            <use
+              href="./images/icons.svg#icon-Vector"
+              width="8"
+              height="8"
+            ></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
